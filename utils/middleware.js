@@ -14,7 +14,7 @@ const isAuth = async (req, res, next) => {
 
     jwt.verify(
       token,
-      process.env.ACCESSS_TOKEN_SECRET,
+      process.env.ACCESS_TOKEN_SECRET,
       function (err, decoded) {
         if (err) {
           return res.status(403).send({ message: "Forbidden Access" });

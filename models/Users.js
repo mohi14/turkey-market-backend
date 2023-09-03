@@ -35,31 +35,31 @@ const userSchema = new mongoose.Schema(
     },
     companyAddress: {
       type: String,
-      required: true,
+      required: false,
     },
     city: {
       type: String,
-      required: true
+      required: false
     },
     zipCode: {
       type: Number,
-      required: true
+      required: false
     },
     province: {
       type: String,
-      required: true
+      required: false
     },
     country: {
       type: String,
-      required: true
+      required: false
     },
     phoneNumber: {
       type: String,
-      required: true
+      required: false
     }
   },
   {
-    timestamps: true,
+    timestamps: false,
   }
 );
 

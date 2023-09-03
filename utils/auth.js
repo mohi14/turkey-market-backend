@@ -8,7 +8,7 @@ const generateToken = async (user) => {
       name: user.name,
       email: user.email,
     },
-    process.env.ACCESSS_TOKEN_SECRET,
+    process.env.ACCESS_TOKEN_SECRET,
     {
       expiresIn: "1d",
     }
