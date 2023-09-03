@@ -31,7 +31,7 @@ const userSchema = new mongoose.Schema(
     },
     companyName: {
       type: String,
-      required: true,
+      required: false,
     },
     companyAddress: {
       type: String,

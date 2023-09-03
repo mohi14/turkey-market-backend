@@ -16,7 +16,7 @@ const registerUser = async (req, res) => {
       });
     } else if (isExist && isVerified === false) {
       const password = bcrcypt.hashSync(req.body.password);
-      const otp = randomstring.generate({ length: 6, charset: "numeric" });
+      const otp = randomstring.generate({ length: 5, charset: "numeric" });
 
       isExist.password = password;
       isExist.otp = otp;
@@ -30,12 +30,19 @@ const registerUser = async (req, res) => {
         status: 200,
       });
     } else {
-      const otp = randomstring.generate({ length: 6, charset: "numeric" });
+      const otp = randomstring.generate({ length: 5, charset: "numeric" });
       const newUser = new User({
         name: req.body.name,
         email: req.body.email,
         password: bcrcypt.hashSync(req.body.password),
         otp,
+        companyName: req.body.companyName,
+        companyAddress: req.body.companyAddress,
+        city: req.body.city,
+        zipCode: req.body.zipCode,
+        province: req.body.province,
+        country: req.body.country,
+        phoneNumber: req.body.phoneNumber
       });
 
       const user = await newUser.save();
